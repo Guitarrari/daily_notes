@@ -1,0 +1,28 @@
+import Header from './components/Header/index'
+import { useState } from 'react';
+
+
+//componente -> estrutura de código que retorna um HTML, CSS ou JS
+//propriedades -> informações que um componente PAI passa para o componente FILHO
+//estado -> função que armazena uma informação e manipula ela
+
+//Para retornar varios componentes da função Header, deve ser inserido uma div por fora dos elementos
+//retornando assim um elemento apenas(DIV) independente da quantidade de compoonentes utilizados dentro
+//usar tag DIV pode dar problema na hora de etilização, logo é possível usar tag vazia <> nao sendo criado assim um elemento html intermediario
+
+  const [counter, setCounter] = useState(0);
+
+  function botaoSoma(){
+    setCounter(counter + 1)
+  }
+
+  function botaoSub(){
+    setCounter(counter - 1)
+  }
+
+      <>
+      <Header title="Curso React"/>
+      <h1>{counter}</h1>
+      <button onClick={botaoSub}>-</button>
+      <button onClick={botaoSoma}>+</button>
+    </>
